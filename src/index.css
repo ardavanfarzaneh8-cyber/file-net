@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #060608;
+  --surface: rgba(255, 255, 255, 0.05);
+  --surface-2: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.09);
+  --border-strong: rgba(255, 255, 255, 0.16);
+  --accent: #E9F23A;
+  --accent-deep: #C7D400;
+  --cyan: #3EE0F0;
+  --red: #FF4D4D;
+  --text: #FFFFFF;
+  --muted: rgba(255, 255, 255, 0.55);
+  --muted-2: rgba(255, 255, 255, 0.38);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Vazirmatn', sans-serif;
+  background: #000;
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app-shell {
+  max-width: 440px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background:
+    radial-gradient(120% 80% at 80% -10%, rgba(62, 224, 240, 0.10) 0%, transparent 45%),
+    radial-gradient(100% 60% at 10% 5%, rgba(233, 242, 58, 0.07) 0%, transparent 40%),
+    linear-gradient(180deg, #0A0A0C 0%, #060608 60%, #030304 100%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* faint film grain for richness */
+.app-shell::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; }
+
+/* ---------- surfaces ---------- */
+.surface {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.surface-solid {
+  background: linear-gradient(180deg, #141418 0%, #0D0D10 100%);
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.chip {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.glass-nav {
+  background: rgba(16, 16, 20, 0.72);
+  border: 1px solid var(--border-strong);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ---------- accents ---------- */
+.accent-fill {
+  background: linear-gradient(135deg, #F2F86A 0%, #E9F23A 45%, #CFDA12 100%);
+  color: #1A1D00;
+  box-shadow: 0 8px 24px rgba(233, 242, 58, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.accent-glow {
+  box-shadow: 0 0 0 1px rgba(233, 242, 58, 0.5), 0 0 24px rgba(233, 242, 58, 0.28);
+}
+
+.cyan-glow {
+  box-shadow: 0 0 0 1px rgba(62, 224, 240, 0.45), 0 0 22px rgba(62, 224, 240, 0.30);
+}
+
+.text-accent { color: var(--accent); }
+.text-cyan { color: var(--cyan); }
+.text-muted { color: var(--muted); }
+
+.text-gradient-accent {
+  background: linear-gradient(120deg, #FBFFB0 0%, #E9F23A 50%, #B9C400 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* scrim gradient used over hero photos */
+.scrim-bottom {
+  background: linear-gradient(180deg, rgba(6, 6, 8, 0) 0%, rgba(6, 6, 8, 0.15) 45%, rgba(6, 6, 8, 0.82) 82%, #060608 100%);
+}
+.scrim-full {
+  background: linear-gradient(180deg, rgba(6, 6, 8, 0.55) 0%, rgba(6, 6, 8, 0.15) 35%, rgba(6, 6, 8, 0.75) 78%, #060608 100%);
+}
+
+/* keyframe: soft shimmer sweep */
+@keyframes sweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.18) 48%, transparent 66%);
+  transform: translateX(-120%);
+  animation: sweep 4.5s ease-in-out infinite;
+}
+
+input, textarea { font-family: inherit; }
+input::placeholder, textarea::placeholder { color: var(--muted-2); }
