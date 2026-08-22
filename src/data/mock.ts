@@ -255,6 +255,24 @@ export const publicAds: PublicAd[] = [
   { id: 'ad6', source: 'sheypoor', title: 'مغازه ۴۵ متری بر اصلی', price: '۴٫۲ میلیارد', area: 45, rooms: 0, address: 'شیراز، ملاصدرا', time: '۵ ساعت پیش', image: IMAGES.villaNight, deal: 'sale' },
 ]
 
+// ---------- building-services ads (shown on home) ----------
+export type BuildingService = {
+  id: string
+  title: string
+  provider: string
+  phone: string
+  category: string
+  tag?: string
+}
+
+export const buildingServices: BuildingService[] = [
+  { id: 's1', title: 'نقاشی و رنگ ساختمان', provider: 'استاد رحیمی', phone: '0917 220 4411', category: 'نقاشی', tag: 'ویژه' },
+  { id: 's2', title: 'کابینت، کمد و MDF', provider: 'گروه دکوچوب', phone: '0912 553 7788', category: 'کابینت' },
+  { id: 's3', title: 'تأسیسات برق و لوله‌کشی', provider: 'مهندس کاظمی', phone: '0935 118 9002', category: 'تأسیسات', tag: 'فوری' },
+  { id: 's4', title: 'بازسازی و نوسازی کامل', provider: 'شرکت بنّاپلاس', phone: '0938 447 1120', category: 'بازسازی' },
+  { id: 's5', title: 'کاشی، سرامیک و کف‌پوش', provider: 'استاد موسوی', phone: '0919 663 2255', category: 'کاشی‌کاری' },
+]
+
 // ---------- messages inbox ----------
 export type Conversation = {
   id: string

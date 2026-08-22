@@ -17,8 +17,8 @@ export default function Requests() {
       <div className="px-6">
         <div className="surface rounded-card p-4 flex items-center justify-between">
           <div>
-            <p className="text-[13px] font-bold text-white">لیدهای ورودی</p>
-            <p className="text-[11px] text-white/45 mt-0.5">درخواست‌های تازهٔ مشتری‌ها را اینجا پاسخ بده</p>
+            <p className="text-[13px] font-bold text-white">درخواست‌های ورودی</p>
+            <p className="text-[11px] text-white/45 mt-0.5">این درخواست‌ها از طرف سامانه برایت ارسال می‌شوند — مثل پیام پاسخ بده</p>
           </div>
           <span className="w-11 h-11 rounded-full accent-fill flex items-center justify-center text-[14px] font-extrabold">
             {unread}

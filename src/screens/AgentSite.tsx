@@ -4,7 +4,7 @@ import ScreenHeader from '../components/ScreenHeader'
 import BottomNav from '../components/BottomNav'
 import PropertyRow from '../components/PropertyRow'
 import { agent, properties, IMAGES } from '../data/mock'
-import { PhoneIcon, ChatIcon, ShareIcon, StarIcon, MapPinIcon, CheckIcon } from '../components/Icons'
+import { PhoneIcon, ChatIcon, ShareIcon, StarIcon, MapPinIcon, CheckIcon, PlusIcon } from '../components/Icons'
 import { useNavigate } from 'react-router-dom'
 
 export default function AgentSite() {
@@ -24,7 +24,7 @@ export default function AgentSite() {
         </div>
         <div className="absolute top-0 inset-x-0">
           <ScreenHeader
-            title="سایت شخصی"
+            title="دفتر کار"
             right={
               <button className="w-11 h-11 rounded-full bg-black/40 backdrop-blur-md border border-white/10 flex items-center justify-center text-accent">
                 <ShareIcon className="w-4 h-4" />
@@ -74,8 +74,16 @@ export default function AgentSite() {
           </div>
         </div>
 
+        <motion.button
+          whileTap={{ scale: 0.97 }}
+          onClick={() => navigate('/new-file')}
+          className="w-full mt-6 accent-fill rounded-pill py-3.5 flex items-center justify-center gap-2 text-[13.5px] font-bold"
+        >
+          <PlusIcon className="w-5 h-5 text-[#1A1D00]" /> افزودن فایل جدید
+        </motion.button>
+
         <div className="flex items-center justify-between mt-6 mb-3">
-          <h2 className="text-[14px] font-bold text-white">فایل‌های این مشاور</h2>
+          <h2 className="text-[14px] font-bold text-white">فایل‌های من</h2>
           <span className="text-[11px] text-white/40">{properties.length} فایل</span>
         </div>
         <div className="space-y-3">

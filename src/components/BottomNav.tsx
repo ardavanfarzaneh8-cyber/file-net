@@ -1,13 +1,13 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { HomeIcon, ListIcon, PlusIcon, ChatIcon, ProfileIcon } from './Icons'
+import { HomeIcon, ListIcon, BriefcaseIcon, ChatIcon, SettingsIcon } from './Icons'
 
 const items = [
   { path: '/home', label: 'خانه', Icon: HomeIcon },
-  { path: '/listings', label: 'آگهی‌ها', Icon: ListIcon },
-  { path: '/new-file', label: '', Icon: PlusIcon, isAction: true },
-  { path: '/messages', label: 'پیام', Icon: ChatIcon },
-  { path: '/profile', label: 'پروفایل', Icon: ProfileIcon },
+  { path: '/public-ads', label: 'نیازمندی‌ها', Icon: ListIcon },
+  { path: '/agent-site', label: 'دفتر کار', Icon: BriefcaseIcon, isAction: true },
+  { path: '/messages', label: 'پیام‌ها', Icon: ChatIcon },
+  { path: '/profile', label: 'تنظیمات', Icon: SettingsIcon },
 ]
 
 export default function BottomNav() {
@@ -18,7 +18,7 @@ export default function BottomNav() {
     <div className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[440px] px-6 pb-5 z-40 pointer-events-none">
       <div className="glass-nav pointer-events-auto rounded-pill px-3 py-2 flex items-center justify-between">
         {items.map(({ path, label, Icon, isAction }) => {
-          const active = location.pathname === path || (path !== '/' && location.pathname.startsWith(path))
+          const active = location.pathname === path || (path !== '/home' && location.pathname.startsWith(path))
           if (isAction) {
             return (
               <motion.button
@@ -26,9 +26,9 @@ export default function BottomNav() {
                 onClick={() => navigate(path)}
                 whileTap={{ scale: 0.88 }}
                 whileHover={{ y: -2 }}
-                className="relative -mt-7 w-14 h-14 rounded-full flex items-center justify-center accent-fill"
+                className="relative -mt-7 w-14 h-14 rounded-full flex flex-col items-center justify-center accent-fill"
               >
-                <PlusIcon className="w-6 h-6 text-[#1A1D00]" />
+                <Icon className="w-6 h-6 text-[#1A1D00]" />
                 <span className="absolute inset-0 rounded-full accent-glow" />
               </motion.button>
             )
@@ -38,7 +38,7 @@ export default function BottomNav() {
               key={path}
               onClick={() => navigate(path)}
               whileTap={{ scale: 0.9 }}
-              className="relative flex flex-col items-center gap-1 py-1.5 px-3.5 rounded-2xl"
+              className="relative flex flex-col items-center gap-1 py-1.5 px-3 rounded-2xl"
             >
               {active && (
                 <motion.div

@@ -270,3 +270,17 @@ export const ChevronLeft = ({ className }: IconProps) => (
     <path d="M14 6l-6 6 6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
+
+export const SettingsIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className}>
+    <circle cx="12" cy="12" r="3.1" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M19.4 12c0-.5-.05-1-.13-1.5l1.8-1.4-1.9-3.2-2.1.9c-.8-.6-1.6-1-2.6-1.3L14 3h-4l-.4 2.2c-1 .3-1.9.7-2.6 1.3l-2.1-.9-1.9 3.2 1.8 1.4c-.1.5-.13 1-.13 1.5s.05 1 .13 1.5L2.9 15.6l1.9 3.2 2.1-.9c.8.6 1.6 1 2.6 1.3L10 21h4l.4-2.2c1-.3 1.9-.7 2.6-1.3l2.1.9 1.9-3.2-1.8-1.4c.08-.5.13-1 .13-1.5Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+  </svg>
+)
+
+export const BriefcaseIcon = ({ className }: IconProps) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className}>
+    <rect x="3.5" y="7.5" width="17" height="12" rx="2" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M9 7.5V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1.5M3.5 12.5h17" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+  </svg>
+)

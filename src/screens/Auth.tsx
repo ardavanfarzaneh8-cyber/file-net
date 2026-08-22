@@ -77,7 +77,7 @@ export default function Auth() {
           <AccentButton onClick={() => navigate('/home')} variant="dark" className="flex-1">ثبت‌نام</AccentButton>
         </div>
 
-        <p className="text-center text-[11px] text-white/35 mt-5">
+        <p className="text-center text-[11.5px] text-white/65 mt-5">
           با ورود، شما شرایط استفاده از سرویس را می‌پذیرید
         </p>
       </div>
