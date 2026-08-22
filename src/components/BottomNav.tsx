@@ -1,13 +1,13 @@
 import { useNavigate, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { HomeIcon, ListIcon, BriefcaseIcon, ChatIcon, SettingsIcon } from './Icons'
+import { HomeIcon, ListIcon, BriefcaseIcon, BellIcon, ProfileIcon } from './Icons'
 
 const items = [
   { path: '/home', label: 'خانه', Icon: HomeIcon },
   { path: '/public-ads', label: 'نیازمندی‌ها', Icon: ListIcon },
   { path: '/agent-site', label: 'دفتر کار', Icon: BriefcaseIcon, isAction: true },
-  { path: '/messages', label: 'پیام‌ها', Icon: ChatIcon },
-  { path: '/profile', label: 'تنظیمات', Icon: SettingsIcon },
+  { path: '/requests', label: 'درخواست‌ها', Icon: BellIcon },
+  { path: '/profile', label: 'پروفایل', Icon: ProfileIcon },
 ]
 
 export default function BottomNav() {

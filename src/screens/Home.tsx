@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import PageTransition from '../components/PageTransition'
 import BottomNav from '../components/BottomNav'
 import ProfileBar from '../components/ProfileBar'
-import AdSlider from '../components/AdSlider'
 import { buildingServices } from '../data/mock'
 import {
   SearchIcon, SlidersIcon, UsersIcon, FolderIcon, ListIcon,
@@ -52,13 +51,8 @@ export default function Home() {
         </motion.button>
       </div>
 
-      {/* ads slider (placeholder — campaigns come here) */}
-      <div className="px-6 mt-5">
-        <AdSlider />
-      </div>
-
       {/* dashboard cards grid (2×3) */}
-      <div className="px-6 mt-6">
+      <div className="px-6 mt-7">
         <h2 className="text-[14px] font-bold text-white mb-3">دفتر کارِ مشاوران املاک</h2>
         <div className="grid grid-cols-3 gap-3">
           {cards.map(({ label, Icon, path }, i) => (
